@@ -10,6 +10,10 @@ Note that any changes made outside of your home directory from within the Docker
 
 For more info on Docker see here: https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
+### Install Docker
+
+Install Docker on your system, add your user to the `docker` group (`sudo usermod -aG docker $USER`), log out and in again and enable the docker service (`sudo systemctl enable docker`).
+
 ### Build
 
 This will create the image with your user/group ID and home directory.
