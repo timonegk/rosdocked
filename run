@@ -15,4 +15,5 @@ docker run\
   -v "/tmp/.X11-unix:/tmp/.X11-unix:rw"\
   --device=$VIDEO_DEVICE:/dev/video0 \
   --group-add=$VIDEO_GROUP \
+  --rm \
   -it $IMAGE_NAME $SHELL
