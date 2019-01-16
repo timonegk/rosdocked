@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM osrf/ros:kinetic-desktop-full
 
 # Arguments
 ARG user
@@ -14,7 +14,7 @@ RUN apt-get -y update && apt-get install -y zsh screen tmux tree sudo ssh synapt
 RUN apt-get install -y x11-apps python-pip python3-pip build-essential python-catkin-tools
 
 # Additional custom dependencies
-RUN apt-get install -y libncurses5-dev ros-melodic-control-msgs ros-melodic-controller-manager ros-melodic-effort-controllers ros-melodic-gazebo-dev ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-imu-complementary-filter ros-melodic-imu-sensor-controller ros-melodic-joint-state-controller ros-melodic-joint-trajectory-controller ros-melodic-joy ros-melodic-moveit-ros-control-interface ros-melodic-moveit-ros-move-group ros-melodic-moveit-ros-planning ros-melodic-moveit-ros-planning-interface ros-melodic-moveit-ros-robot-interaction ros-melodic-moveit-simple-controller-manager ros-melodic-navigation ros-melodic-pointcloud-to-laserscan ros-melodic-position-controllers ros-melodic-robot-controllers ros-melodic-robot-localization ros-melodic-ros-control ros-melodic-ros-controllers ros-melodic-rosbridge-server ros-melodic-rosdoc-lite ros-melodic-rqt-controller-manager ros-melodic-velocity-controllers uvcdynctrl
+RUN apt-get install -y libncurses5-dev ros-kinetic-control-msgs ros-kinetic-controller-manager ros-kinetic-effort-controllers ros-kinetic-gazebo-dev ros-kinetic-gazebo-msgs ros-kinetic-gazebo-plugins ros-kinetic-gazebo-ros ros-kinetic-gazebo-ros-control ros-kinetic-imu-complementary-filter ros-kinetic-imu-sensor-controller ros-kinetic-joint-state-controller ros-kinetic-joint-trajectory-controller ros-kinetic-joy ros-kinetic-moveit-ros-control-interface ros-kinetic-moveit-ros-move-group ros-kinetic-moveit-ros-planning ros-kinetic-moveit-ros-planning-interface ros-kinetic-moveit-ros-robot-interaction ros-kinetic-moveit-simple-controller-manager ros-kinetic-navigation ros-kinetic-pointcloud-to-laserscan ros-kinetic-position-controllers ros-kinetic-robot-controllers ros-kinetic-robot-localization ros-kinetic-ros-control ros-kinetic-ros-controllers ros-kinetic-rosbridge-server ros-kinetic-rosdoc-lite ros-kinetic-rqt-controller-manager ros-kinetic-velocity-controllers uvcdynctrl
 
 # Python modules
 RUN pip install catkin_pkg PyYAML tensorflow opencv-python

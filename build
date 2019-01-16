@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=ros-melodic
+IMAGE_NAME=ros-kinetic
 DIRNAME=`dirname $0`
 
 # Build the docker image

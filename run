@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=ros-melodic
+IMAGE_NAME=ros-kinetic
 VIDEO_DEVICE=/dev/video0
 # Get the group number of the video group, docker groups may differ
 VIDEO_GROUP=`stat -c "%g" $VIDEO_DEVICE`
