@@ -26,16 +26,19 @@ This will create the image with your user/group ID and home directory.
 
 ### Run
 
-This will run the docker image.
+This will start the docker image.
 
 ```
-./run
+./start
 ```
 
-The image shares it's network interface with the host, so you can run this in
-multiple terminals for multiple hooks into the docker environment.
+This will connect a shell to the docker image
 
-Additionally, a video device is shared with the container. This video device can be set in the `run` script and will appear in the container as `/dev/video0`.
+```
+./connect
+```
+
+A video device is shared with the container. This video device can be set in the `run` script and will appear in the container as `/dev/video0`.
 
 The Docker image will use your own shell configuration. To provide different settings inside and outside of the container, you can make use of the `$DOCKER` environment variable that is set to `1` inside of the docker image. To make use of this put something like
 

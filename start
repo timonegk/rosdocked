@@ -5,8 +5,17 @@ VIDEO_DEVICE=/dev/video0
 # Get the group number of the video group, docker groups may differ
 VIDEO_GROUP=`stat -c "%g" $VIDEO_DEVICE`
 
+# TODO: Test whether docker container is already running
+CONTAINER_NAME=`docker ps --filter status=running --filter ancestor=$IMAGE_NAME --format "{{.Names}}"`
+
+if [[ -n $CONTAINER_NAME ]]; then
+    echo "Container already running, connect with ./connect or stop it with ./stop"
+    exit 1
+fi
+
 # Run the container with shared X11
 docker run\
+  -d\
   --net=host\
   -e SHELL\
   -e DISPLAY\
@@ -16,4 +25,4 @@ docker run\
   --device=$VIDEO_DEVICE:/dev/video0 \
   --group-add=$VIDEO_GROUP \
   --rm \
-  -it $IMAGE_NAME $SHELL
+  -it $IMAGE_NAME > /dev/null  # Do not print container id
