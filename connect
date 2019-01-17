@@ -4,7 +4,10 @@ IMAGE_NAME=ros-kinetic
 CONTAINER_NAME=`docker ps --filter status=running --filter ancestor=$IMAGE_NAME --format "{{.Names}}"`
 
 if [[ -z $CONTAINER_NAME ]]; then
-    echo "No container running, start it with ./start"
-else
-    docker exec -it $CONTAINER_NAME $SHELL
+    echo "Container not running, starting it"
+    DIR=`dirname $0`
+    bash -c "$DIR/start"
 fi
+
+CONTAINER_NAME=`docker ps --filter status=running --filter ancestor=$IMAGE_NAME --format "{{.Names}}"`
+docker exec -it $CONTAINER_NAME $SHELL
