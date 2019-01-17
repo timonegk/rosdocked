@@ -17,6 +17,7 @@ fi
 docker run\
   -d\
   --net=host\
+  --add-host=$HOSTNAME:127.0.1.1 \
   -e SHELL\
   -e DISPLAY\
   -e DOCKER=1\
