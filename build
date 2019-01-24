@@ -5,6 +5,7 @@ DIRNAME=`dirname $0`
 
 # Build the docker image
 docker build\
+  --network=host\
   --build-arg user=$USER\
   --build-arg uid=$UID\
   --build-arg home=$HOME\
