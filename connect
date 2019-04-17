@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 IMAGE_NAME=ros-kinetic
 CONTAINER_NAME=`docker ps --filter status=running --filter ancestor=$IMAGE_NAME --format "{{.Names}}"`
@@ -10,4 +11,10 @@ if [[ -z $CONTAINER_NAME ]]; then
 fi
 
 CONTAINER_NAME=`docker ps --filter status=running --filter ancestor=$IMAGE_NAME --format "{{.Names}}"`
-docker exec -it $CONTAINER_NAME $SHELL
+
+if [[ -z $@ ]]; then
+	docker exec -it $CONTAINER_NAME $SHELL
+else
+	docker exec -t $CONTAINER_NAME "$@"
+fi
+
