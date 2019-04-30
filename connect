@@ -17,4 +17,3 @@ if [[ -z $@ ]]; then
 else
 	docker exec -t $CONTAINER_NAME "$@"
 fi
-
