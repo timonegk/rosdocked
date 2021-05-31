@@ -30,7 +30,8 @@ RUN apt-get install -y ros-melodic-desktop-full ros-melodic-control-msgs ros-mel
 RUN apt-get install -y libncurses5-dev uvcdynctrl python3-yaml python3-opencv python3-numpy
 
 # Python modules
-RUN pip3 install tensorflow git+https://github.com/catkin/catkin_tools.git
+RUN pip3 install pip --upgrade
+RUN pip3 install git+https://github.com/catkin/catkin_tools.git
 
 # Mount the user's home directory
 VOLUME "${home}"
